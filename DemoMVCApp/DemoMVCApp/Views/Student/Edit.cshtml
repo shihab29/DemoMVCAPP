@@ -1,0 +1,37 @@
+﻿@model DemoMVCApp.Models.Student
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container">
+        @using (Html.BeginForm())
+        {
+            <div class="form-group">
+                <label for="Id">Id</label><br />
+                @Html.TextBoxFor(x => x.Id, null, new { @class = "from-control", disabled = "disabled" })
+            </div>
+            <div class="form-group">
+                <label for="Name">Name</label><br />
+                @Html.TextBoxFor(model => model.Name, new { @class = "from-control" })
+            </div>
+            <div class="form-group">
+                <label for="Section">Section</label><br />
+                @Html.TextBoxFor(model => model.Section, new { @class = "from-control" })
+            </div>
+
+            <input type="submit" value="Submit" class="form-control btn btn-success" />
+        }
+    </div>
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>
